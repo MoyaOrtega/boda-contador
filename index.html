@@ -6,22 +6,27 @@
   <title>Cuenta atrás para nuestra boda</title>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
       font-family: 'Lato', sans-serif;
       background: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      height: 100vh;
       text-align: center;
     }
 
     h1 {
       font-size: 1.6rem;
-      margin-bottom: 10px;
+      margin: 0;
       color: #000000;
     }
 
@@ -55,7 +60,6 @@
     @media (max-width: 480px) {
       h1 {
         font-size: 1.3rem;
-        margin-bottom: 10px;
       }
 
       .countdown {
