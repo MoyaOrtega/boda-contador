@@ -31,7 +31,7 @@
       color: #333;
       flex-direction: row;
       justify-content: center;
-      flex-wrap: wrap; /* para que se ajuste bien en móviles sin romper el diseño */
+      flex-wrap: wrap;
     }
 
     .countdown div {
@@ -57,6 +57,11 @@
     <div><span id="seconds">00</span><div class="label">SEG</div></div>
   </div>
 
+  <!-- AUDIO -->
+  <audio autoplay style="display: none">
+    <source src="https://docs.google.com/uc?export=download&id=1ZKPlgOuU2prG4AMx0cUSl1fD9FnkfCv-" type="audio/mpeg">
+  </audio>
+
   <script>
     const targetDate = new Date("2025-06-21T12:00:00").getTime(); // Cambia esta fecha a la de tu boda
 
@@ -80,4 +85,3 @@
   </script>
 </body>
 </html>
-
