@@ -7,8 +7,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * {
-      margin: 1;
-      padding: 1;
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
@@ -20,69 +20,63 @@
       justify-content: center;
       flex-direction: column;
       text-align: center;
-      padding: 0 20px;
-    }
-
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 100px; /* Más espacio entre el texto y el contador */
-      color: #000000;
+      padding: 5px 10px;
     }
 
     .countdown {
       display: flex;
-      flex-direction: row;
-      justify-content: center;
-      gap: 12px;
-      font-size: 2rem;
-      color: #333;
       flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      max-width: 600px;
     }
 
     .countdown div {
       background: #ffffff;
-      padding: 20px 25px;
+      padding: 15px 20px;
       border-radius: 8px;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
-      flex-shrink: 1;
-      min-width: 80px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      flex: 1 1 0;
+      min-width: 60px;
+    }
+
+    .countdown span {
+      display: block;
+      font-size: clamp(1.5rem, 5vw, 2.5rem);
+      font-weight: bold;
+      color: #333;
     }
 
     .label {
-      font-size: 0.9rem;
+      font-size: clamp(0.6rem, 2vw, 0.9rem);
       color: #888;
       margin-top: 4px;
     }
 
-    /* Responsivo para pantallas pequeñas */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-      }
+    html, body {
+      margin: 0;
+    }
 
+    @media (max-width: 480px) {
       .countdown {
-        font-size: 1.2rem;
-        gap: 8px;
+        gap: 6px;
       }
 
       .countdown div {
         padding: 10px;
-        min-width: 55px;
-      }
-
-      .label {
-        font-size: 0.7rem;
       }
     }
   </style>
 </head>
 <body>
-  <h1>Llega el momento... 😉</h1>
+
   <div class="countdown" id="countdown">
     <div><span id="days">00</span><div class="label">DÍAS</div></div>
     <div><span id="hours">00</span><div class="label">HORAS</div></div>
     <div><span id="minutes">00</span><div class="label">MIN</div></div>
+    <div><span id="seconds">00</span><div class="label">SEG</div></div>
   </div>
 
   <!-- AUDIO -->
@@ -100,10 +94,12 @@
       const days = Math.floor(difference / (1000 * 60 * 60 * 24));
       const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
       document.getElementById("days").innerText = String(days).padStart(2, '0');
       document.getElementById("hours").innerText = String(hours).padStart(2, '0');
       document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+      document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
     }
 
     setInterval(updateCountdown, 1000);
@@ -111,3 +107,4 @@
   </script>
 </body>
 </html>
+
