@@ -26,30 +26,52 @@
 
     .countdown {
       display: flex;
-      gap: 15px;
-      font-size: 2rem;
-      color: #333;
       flex-direction: row;
       justify-content: center;
-      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 2rem;
+      color: #333;
+      flex-wrap: nowrap;
     }
 
     .countdown div {
       background: #ffffff;
-      padding: 30px;
-      min-width: 100px;
+      padding: 20px;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      flex-shrink: 1;
+      min-width: 60px;
     }
 
     .label {
       font-size: 0.8rem;
       color: #888;
     }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+
+      .countdown {
+        font-size: 1.2rem;
+        gap: 8px;
+      }
+
+      .countdown div {
+        padding: 10px;
+        min-width: 50px;
+      }
+
+      .label {
+        font-size: 0.7rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>¡Nos casamos en…!</h1>
+  <h1>Te esperamos en...</h1>
   <div class="countdown" id="countdown">
     <div><span id="days">00</span><div class="label">DÍAS</div></div>
     <div><span id="hours">00</span><div class="label">HORAS</div></div>
@@ -63,7 +85,7 @@
   </audio>
 
   <script>
-    const targetDate = new Date("2025-06-21T12:00:00").getTime(); // Cambia esta fecha a la de tu boda
+    const targetDate = new Date("2025-10-18T15:00:00Z").getTime(); // 17:00 en Murcia, UTC+2
 
     function updateCountdown() {
       const now = new Date().getTime();
@@ -85,3 +107,4 @@
   </script>
 </body>
 </html>
+
