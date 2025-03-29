@@ -4,12 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cuenta atrás para nuestra boda</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Arial', sans-serif;
-      background: #ffffff; /* fondo blanco */
+      font-family: 'Lato', sans-serif;
+      background: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -19,59 +20,62 @@
     }
 
     h1 {
-      font-size: 2rem;
-      margin-bottom: 30px;
-      color: #000000; /* texto negro */
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: #000000;
     }
 
     .countdown {
       display: flex;
       flex-direction: row;
       justify-content: center;
-      gap: 10px;
-      font-size: 2rem;
+      gap: 8px;
+      font-size: 1.5rem;
       color: #333;
       flex-wrap: nowrap;
+      margin: 0;
+      padding: 0;
     }
 
     .countdown div {
       background: #ffffff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
       flex-shrink: 1;
-      min-width: 60px;
+      min-width: 50px;
     }
 
     .label {
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       color: #888;
+      margin-top: 2px;
     }
 
     @media (max-width: 480px) {
       h1 {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
+        font-size: 1.3rem;
+        margin-bottom: 10px;
       }
 
       .countdown {
-        font-size: 1.2rem;
-        gap: 8px;
+        font-size: 1.1rem;
+        gap: 6px;
       }
 
       .countdown div {
-        padding: 10px;
-        min-width: 50px;
+        padding: 8px;
+        min-width: 45px;
       }
 
       .label {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
       }
     }
   </style>
 </head>
 <body>
-  <h1>Te esperamos en...</h1>
+  <h1>Llega el momento... 😉</h1>
   <div class="countdown" id="countdown">
     <div><span id="days">00</span><div class="label">DÍAS</div></div>
     <div><span id="hours">00</span><div class="label">HORAS</div></div>
@@ -104,4 +108,3 @@
   </script>
 </body>
 </html>
-
